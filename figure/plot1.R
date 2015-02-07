@@ -6,5 +6,5 @@ DT=data.table(household_power_consumption)
 select<-c("1/2/2007","2/2/2007")
 data<-DT[DT$Date %in% select,]
 hist(data$Global_active_power, col="red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
-dev.copy(png, file="Test.png")
+dev.copy(png, file="plot1.png")
 dev.off()
