@@ -1,0 +1,10 @@
+library("datasets")
+library("data.table")
+household_power_consumption <- read.csv("household_power_consumption.txt", sep=";", na.strings="?")
+View(household_power_consumption)
+DT=data.table(household_power_consumption)
+select<-c("1/2/2007","2/2/2007")
+data<-DT[DT$Date %in% select,]
+hist(data$Global_active_power, col="red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
+dev.copy(png, file="Test.png")
+dev.off()
